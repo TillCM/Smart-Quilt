@@ -2,6 +2,7 @@
 #include <WiFiEspClient.h>
 #include <WiFiEspServer.h>
 #include <SoftwareSerial.h>
+#include <ArduinoJson.h>
 #include <aREST.h>
 #include <SPI.h>
 #include <WiFiEspUdp.h>
