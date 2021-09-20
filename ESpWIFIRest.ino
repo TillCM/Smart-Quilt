@@ -88,7 +88,7 @@ void loop()
         // you got two newline characters in a row
         // that's the end of the HTTP request, so send a response
         if (buf.endsWith("\r\n")) {
-          delay(8000);
+          delay(10000);
           sendHttpResponse(client);
           break;
         }
@@ -142,15 +142,9 @@ void sendHttpResponse(WiFiEspClient client)
     "\r\n");
   
  
-
+  //delay(10000);
   client.print("{\n \"LearnShapes\":\n  {\"activityID\": \"001\",\n    \"acticityName\": \"shapes\",\n    \"date\":\"12/12/2021\",\n    \"correct\": \"8\",\n     \"timeOnTask\":\"5\"\n },\n \"LearnNumbers\":\n  {\"activityID\": \"002\",\n    \"acticityName\": \"numbers\",\n    \"date\":\"12/12/2021\",\n    \"correct\": \"5\",\n     \"timeOnTask\":\"1.5\"\n },\n \"MarchShapes\":\n  {\"activityID\": \"003\",\n    \"acticityName\": \"match\",\n    \"date\":\"12/12/2021\",\n    \"correct\": \"6\",\n     \"timeOnTask\":\"3\"\n },\n \"Love\":\n  {\"activityID\": \"004\",\n    \"acticityName\": \"loves\",\n    \"date\":\"12/12/2021\",\n    \"correct\": \"8\",\n     \"timeOnTask\":\"5\"\n }\n\n}\n\n");
-  
-  Serial.print(json);
-  client.print(++reqCount);
-  client.print(correct);
-  client.print("Analog input A0: ");
-  client.print(analogRead(0));
- 
+
 }
 
 
